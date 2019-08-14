@@ -7,6 +7,9 @@
 /firmware(/.*)?          u:object_r:firmware_file:s0
 /persist(/.*)?           u:object_r:persist_file:s0
 
+# Fingerprint nodes
+/sys/devices/virtual/touch/tp_dev/fod_status    u:object_r:sysfs_tp_fodstatus:s0
+
 # HALs
 /system/bin/hw/android\.hardware\.power@1\.3-service\.raphael-libperfmgr                                     u:object_r:libperfmgr_exec:s0
 /system/bin/hw/lineage\.livedisplay@2\.0-service-sdm                   u:object_r:shal_livedisplay_default_exec:s0
