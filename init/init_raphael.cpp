@@ -48,7 +48,6 @@ void load_raphaelglobal() {
     property_override("ro.product.device", "raphael");
     property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V11.0.1.0.QFKMIXM release-keys");
     property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-    property_override("ro.control_privapp_permissions", "log");
 }
 
 void load_raphaelin() {
@@ -57,7 +56,6 @@ void load_raphaelin() {
     property_override("ro.product.device", "raphaelin");
     property_override("ro.build.description", "raphaelin-user 10 QKQ1.190825.002 V11.0.1.0.QFKINXM release-keys");
     property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-    property_override("ro.control_privapp_permissions", "log");
 }
 
 void load_raphael() {
@@ -66,7 +64,6 @@ void load_raphael() {
     property_override("ro.product.device", "raphael");
     property_override("ro.build.description", "raphael-user 10 QKQ1.190825.002 V11.0.4.0.QFKCNXM release-keys");
     property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-    property_override("ro.control_privapp_permissions", "log");
 }
 
 void vendor_load_properties() {
@@ -86,4 +83,6 @@ void vendor_load_properties() {
     property_override("persist.bluetooth.a2dp_offload.disabled", "true");
     property_override("persist.bluetooth.bluetooth_audio_hal.disabled", "true");
     property_override("ro.oem_unlock_supported", "0");
+    property_override("ro.apex.updatable", "true");
+    property_override("ro.control_privapp_permissions", "log");
 }
