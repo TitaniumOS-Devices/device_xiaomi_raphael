@@ -4,5 +4,10 @@
     "repository": "proprietary_vendor_xiaomi_new",
     "target_path": "vendor/xiaomi",
     "branch": "ten"
+  },
+  {
+    "repository": "vendor_MiuiCamera",
+    "target_path": "vendor/MiuiCamera",
+    "branch": "ten-anx-raphael"
   }
 ]
