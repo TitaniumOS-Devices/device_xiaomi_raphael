@@ -133,10 +133,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/libnfc-nci.conf
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.raphael
-
 # Ril
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4
