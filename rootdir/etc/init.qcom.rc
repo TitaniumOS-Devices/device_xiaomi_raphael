@@ -42,3 +42,9 @@ service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
 
 service vendor.power-hal-1-2 /system/bin/true
     disabled
+
+service iop-hal-2-0 /system/bin/true
+    disabled
+
+service perf-hal-2-0 /system/bin/true
+    disabled
