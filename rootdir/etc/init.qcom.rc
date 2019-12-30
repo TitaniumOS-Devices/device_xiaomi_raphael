@@ -51,3 +51,6 @@ service iop-hal-2-0 /system/bin/true
 
 service perf-hal-2-0 /system/bin/true
     disabled
+
+on property:init.svc.vendor.ipacm-diag=running
+    stop vendor.ipacm-diag
