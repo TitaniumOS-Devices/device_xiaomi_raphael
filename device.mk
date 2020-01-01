@@ -96,6 +96,7 @@ PRODUCT_PACKAGES += \
     init.mi_thermald.rc \
     init.qcom.rc \
     init.qcom.post_boot.sh \
+    init.qcom.usb.sh \
     init.safailnet.rc
 
 # Input
