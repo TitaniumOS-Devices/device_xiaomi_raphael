@@ -10,6 +10,7 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
 TITANIUM_BUILD_TYPE := OFFICIAL
+TARGET_INCLUDE_WIFI_EXT := true
 $(call inherit-product, vendor/titanium/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
