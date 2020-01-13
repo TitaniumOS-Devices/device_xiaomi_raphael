@@ -4581,6 +4581,9 @@ case "$target" in
 	echo 2000 > /dev/blkio/blkio.group_idle
 	echo 0 > /dev/blkio/background/blkio.group_idle
 
+    # Disable sched autogroup
+    echo 0 > /proc/sys/kernel/sched_autogroup_enabled
+
 	# Stock LMK settings
 	echo "18432,23040,27648,51256,150296,200640" > /sys/module/lowmemorykiller/parameters/minfree
 
