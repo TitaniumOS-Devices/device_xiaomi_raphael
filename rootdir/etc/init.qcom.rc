@@ -13,6 +13,14 @@ on init
     mount none /system/etc/fs_none /vendor/etc/init/android.hardware.power@1.2-service.rc bind
     mount none /system/etc/fs_none /vendor/etc/powerhint.xml bind
 
+    # Mask up vendor overlay
+    mount none /system/etc/fs_none /vendor/overlay/DevicesAndroidOverlay.apk bind
+    mount none /system/etc/fs_none /vendor/overlay/DevicesOverlay.apk bind
+    mount none /system/etc/fs_none /vendor/overlay/DocumentsUIOverlay/DocumentsUIOverlay.apk bind
+    mount none /system/etc/fs_none /vendor/overlay/FrameworksResCommon.apk bind
+    mount none /system/etc/fs_none /vendor/overlay/FrameworksResTarget.apk bind
+    mount none /system/etc/fs_none /vendor/overlay/SystemUIResCommon.apk bind
+
     # Add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
