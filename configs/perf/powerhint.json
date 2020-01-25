@@ -131,7 +131,6 @@
       "Name": "TASchedtuneBoost",
       "Path": "/dev/stune/top-app/schedtune.boost",
       "Values": [
-        "30",
         "10"
       ],
       "ResetOnInit": true
@@ -297,7 +296,7 @@
       "Values": [
         "CAMERA_STREAMING",
         "CAMERA_STREAMING_4K",
-	"CAMERA_STREAMING_60FPS",
+        "CAMERA_STREAMING_60FPS",
         "CAMERA_STREAMING_SECURE",
         "SUSTAINED_PERFORMANCE",
         ""
@@ -358,7 +357,7 @@
       "PowerHint": "INTERACTION",
       "Node": "TASchedtuneBoost",
       "Duration": 0,
-      "Value": "30"
+      "Value": "10"
     },
     {
       "PowerHint": "INTERACTION",
