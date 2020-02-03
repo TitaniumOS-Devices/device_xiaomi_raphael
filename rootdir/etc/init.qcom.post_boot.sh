@@ -445,11 +445,20 @@ ProductName=`getprop ro.product.name`
 low_ram=`getprop ro.config.low_ram`
 
 if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
-      # Enable ZRAM
-      configure_zram_parameters
-      configure_read_ahead_kb_values
-      echo 0 > /proc/sys/vm/page-cluster
-      echo 100 > /proc/sys/vm/swappiness
+    # Enable ZRAM
+    configure_zram_parameters
+    configure_read_ahead_kb_values
+    echo 0 > /proc/sys/vm/page-cluster
+    echo 100 > /proc/sys/vm/swappiness
+    # Disable ALMK and PPR
+    echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+    echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+    # Enable oom_reaper
+    if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
+        echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
+    else
+        echo 1 > /proc/sys/vm/reap_mem_on_sigkill
+    fi
 else
     arch_type=`uname -m`
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
