@@ -19,6 +19,7 @@
 #include "FingerprintInscreen.h"
 
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 #include <fstream>
 #include <cmath>
 
@@ -42,6 +43,8 @@
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 
 namespace {
+
+using ::android::base::GetProperty;
 
 template <typename T>
 static T get(const std::string& path, const T& def) {
@@ -72,15 +75,54 @@ FingerprintInscreen::FingerprintInscreen() {
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
-    return FOD_SENSOR_X;
+    int result;
+    std::string vOff = GetProperty(propFODOffset, "");
+
+    if (vOff.length() < 3) {
+        return FOD_SENSOR_X;
+    }
+
+    result = std::stoi(vOff.substr(0, vOff.find(",")));
+    if (result < 1) {
+        return FOD_SENSOR_X;
+    }
+
+    return result;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionY() {
-    return FOD_SENSOR_Y;
+    int result;
+    std::string vOff = GetProperty(propFODOffset, "");
+
+    if (vOff.length() < 3) {
+        return FOD_SENSOR_Y;
+    }
+
+    result = std::stoi(vOff.substr(vOff.find(",") + 1));
+    if (result < 1) {
+        return FOD_SENSOR_Y;
+    }
+
+    return result;
 }
 
 Return<int32_t> FingerprintInscreen::getSize() {
-    return FOD_SENSOR_SIZE;
+    int result, propW, propH;
+    std::string vSize = GetProperty(propFODSize, "");
+
+    if (vSize.length() < 7) {
+        return FOD_SENSOR_SIZE;
+    }
+
+    propW = std::stoi(vSize.substr(0, vSize.find(",")));
+    propH = std::stoi(vSize.substr(vSize.find(",") +1));
+
+    result = fmax(propW, propH);
+    if (result < 1) {
+        return FOD_SENSOR_SIZE;
+    }
+    
+    return result;
 }
 
 Return<void> FingerprintInscreen::onStartEnroll() {
