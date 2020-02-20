@@ -1,7 +1,6 @@
 [
   {
-    "remote": "evo-devices",
-    "repository": "proprietary_vendor_xiaomi_new",
+    "repository": "vendor_xiaomi_raphael",
     "target_path": "vendor/xiaomi",
     "branch": "ten"
   },

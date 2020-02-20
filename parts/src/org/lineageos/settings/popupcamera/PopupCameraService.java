@@ -46,7 +46,7 @@ import android.widget.Button;
 
 import java.util.List;
 
-import com.android.internal.util.custom.FileUtils;
+import com.android.internal.util.titanium.FileUtils;
 
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.LimitSizeList;
