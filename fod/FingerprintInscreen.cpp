@@ -42,7 +42,13 @@
 
 #define BRIGHTNESS_PATH "/sys/class/backlight/panel0-backlight/brightness"
 
-namespace {
+namespace vendor {
+namespace lineage {
+namespace biometrics {
+namespace fingerprint {
+namespace inscreen {
+namespace V1_0 {
+namespace implementation {
 
 using ::android::base::GetProperty;
 
@@ -59,16 +65,6 @@ static void set(const std::string& path, const T& value) {
     std::ofstream file(path);
     file << value;
 }
-
-} // anonymous namespace
-
-namespace vendor {
-namespace lineage {
-namespace biometrics {
-namespace fingerprint {
-namespace inscreen {
-namespace V1_0 {
-namespace implementation {
 
 FingerprintInscreen::FingerprintInscreen() {
     xiaomiFingerprintService = IXiaomiFingerprint::getService();
