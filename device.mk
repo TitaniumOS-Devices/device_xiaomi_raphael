@@ -71,7 +71,8 @@ PRODUCT_COPY_FILES += \
     vendor/titanium/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.1-service.raphael
+    lineage.biometrics.fingerprint.inscreen@1.1-service.raphael \
+    gfscreenoffd
 
 # FM
 PRODUCT_PACKAGES += \
