@@ -1,3 +1,6 @@
+# Binaries
+/(vendor|system/vendor)/bin/gfscreenoffd u:object_r:gfscreenoffd_exec:s0
+
 # Data files
 /data/display(/.*)?                 u:object_r:display_data_file:s0
 
@@ -12,6 +15,7 @@
 
 # Fingerprint nodes
 /sys/devices/virtual/touch/tp_dev/fod_status    u:object_r:sysfs_tp_fodstatus:s0
+/sys/devices/virtual/touch/tp_dev/fod_test      u:object_r:sysfs_tp_fodstatus:s0
 
 # HALs
 /system/bin/hw/android\.hardware\.power@1\.3-service\.raphael-libperfmgr                                     u:object_r:libperfmgr_exec:s0
