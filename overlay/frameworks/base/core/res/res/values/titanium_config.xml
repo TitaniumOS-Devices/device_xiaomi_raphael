@@ -117,4 +117,10 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.settings.fod.FodKeyHandler</item>
     </string-array>
+
+    <!-- Library path of screen off fod handler -->
+    <string name="config_fodScreenOffHandlerLib" translatable="false">/system/priv-app/XiaomiParts/XiaomiParts.apk</string>
+
+    <!-- Class name of screen off fod handler -->
+    <string name="config_fodScreenOffHandlerClass" translatable="false">org.lineageos.settings.fod.FodScreenOffHandlerImpl</string>
 </resources>
