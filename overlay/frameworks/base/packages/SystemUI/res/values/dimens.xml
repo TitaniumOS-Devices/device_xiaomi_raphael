@@ -28,4 +28,9 @@
     <dimen name="rounded_corner_radius_bottom">87.0px</dimen>
     <!-- the padding on the start and the end of the statusbar -->
     <dimen name="status_bar_extra_padding">12dp</dimen>
+
+    <!-- The margin between Emergency Carrier area and pattern/pin
+         view to incorporate the FOD icon -->
+    <dimen name="keyguard_security_fod_view_margin">100dp</dimen>
+
 </resources>
