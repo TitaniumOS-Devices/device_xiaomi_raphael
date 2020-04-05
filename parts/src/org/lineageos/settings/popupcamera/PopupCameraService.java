@@ -51,6 +51,7 @@ import com.android.internal.util.titanium.FileUtils;
 import vendor.xiaomi.hardware.displayfeature.V1_0.IDisplayFeature;
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.LimitSizeList;
+import org.lineageos.settings.utils.ProximitySensor;
 
 import vendor.xiaomi.hardware.motor.V1_0.IMotor;
 import vendor.xiaomi.hardware.motor.V1_0.IMotorCallback;
