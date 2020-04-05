@@ -739,6 +739,9 @@
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
 
+    <!-- Whether to turn on the notification light when the state of the front camera changes -->
+    <bool name="config_popUpNotificationLight">true</bool>
+
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
         <item>0</item>

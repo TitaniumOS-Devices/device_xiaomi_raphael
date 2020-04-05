@@ -311,7 +311,6 @@ public class PopupCameraService extends Service {
                     }else if (mCameraState.equals(openCameraState) && (status == MOTOR_STATUS_TAKEBACK_OK || status == MOTOR_STATUS_CALIB_OK)) {
                         mTakebackFailedRecord = 0;
                         if (!mProximityNear){
-                            lightUp();
                             playSoundEffect(openCameraState);
                             mMotor.popupMotor(1);
                             mSensorManager.registerListener(mFreeFallListener, mFreeFallSensor, SensorManager.SENSOR_DELAY_NORMAL);
@@ -321,7 +320,6 @@ public class PopupCameraService extends Service {
                         }
                     } else if (mCameraState.equals(closeCameraState) && (status == MOTOR_STATUS_POPUP_OK || status == MOTOR_STATUS_CALIB_OK)) {
                         mPopupFailedRecord = 0;
-                        lightUp();
                         playSoundEffect(closeCameraState);
                         mMotor.takebackMotor(1);
                         mSensorManager.unregisterListener(mFreeFallListener, mFreeFallSensor);
@@ -453,21 +451,6 @@ public class PopupCameraService extends Service {
                 soundEffect++;
             }
             mSoundPool.play(mSounds[soundEffect], 1.0f, 1.0f, 0, 0, 1.0f);
-        }
-    }
-
-    private void lightUp() {
-        if (mPopupCameraPreferences.isLedAllowed()){
-            FileUtils.writeLine(GREEN_LED_PATH, "255");
-            FileUtils.writeLine(BLUE_LED_PATH, "255");
-
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    FileUtils.writeLine(GREEN_LED_PATH, "0");
-                    FileUtils.writeLine(BLUE_LED_PATH, "0");
-                }
-            }, 1200);
         }
     }
 
