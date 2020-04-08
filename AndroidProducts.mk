@@ -5,4 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_raphael.mk
+    $(LOCAL_DIR)/titanium_raphael.mk
+
+COMMON_LUNCH_CHOICES := \
+    titanium_raphael-user \
+    titanium_raphael-userdebug \
+    titanium_raphael-eng
